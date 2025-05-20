@@ -1,45 +1,31 @@
 import java.util.Scanner;
 
-interface Calculator {
-    void add();
-    void multiply();
-    void subtract();
-}
-
-class KDG_Calculator implements Calculator {
-    private int a;
-    private int b;
-
-    public KDG_Calculator(int a, int b) {
-        this.a = a;
-        this.b = b;
-    }
-
-    public void add() {
-        System.out.println("Addition: " + (a + b));
-    }
-
-    public void multiply() {
-        System.out.println("Multiplication: " + (a * b));
-    }
-
-    public void subtract() {
-        System.out.println("Subtraction: " + (a - b));
-    }
-}
-
 public class Main {
     public static void main(String[] args) {
         Scanner stdin = new Scanner(System.in);
+        int num1 = stdin.nextInt();
+        int num2 = stdin.nextInt();
 
-        int a = stdin.nextInt();
-        int b = stdin.nextInt();
-
-        Calculator calc = new KDG_Calculator(a, b);
-        calc.add();
-        calc.multiply();
-        calc.subtract();
-
-        stdin.close();
+        YEB_Calculator yc = new YEB_Calculator();
+        System.out.println(yc.add(num1,num2));
+        System.out.println(yc.multiply(num1,num2));
+        System.out.println(Calculator.subtract(num1,num2));
     }
 }
+
+
+interface Calculator {
+    int add(int a, int b);
+    default int multiply(int a, int b) {
+        return a*b;
+    }
+    static int subtract(int a, int b) {
+        return a-b;
+    }
+}
+
+class YEB_Calculator implements Calculator {
+    @Override
+    public int add(int a, int b) {
+        return a+b;
+    }
