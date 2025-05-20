@@ -31,11 +31,8 @@ class KDG_Calculator implements Calculator {
 public class Main {
     public static void main(String[] args) {
         Scanner stdin = new Scanner(System.in);
-        
-        System.out.print("Enter first number: ");
-        int a = stdin.nextInt();
 
-        System.out.print("Enter second number: ");
+        int a = stdin.nextInt();
         int b = stdin.nextInt();
 
         Calculator calc = new KDG_Calculator(a, b);
