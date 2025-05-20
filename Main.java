@@ -15,22 +15,22 @@ class KDG_Calculator implements Calculator {
     }
 
     public void add() {
-        System.out.println("덧셈: " + (a+b));
+        System.out.println((a+b));
     }
     public void multiply() {
-        System.out.println("곱셈: " + (a*b));
+        System.out.println((a*b));
     }
     public void subtract() {
-        System.out.println("뺄셈: " + (a-b));
+        System.out.println((a-b));
     }
 }
 
 public class Main {
     public static void main(String[] args) {
         Scanner stdin = new Scanner(System.in);
-        System.out.print("첫 번째 숫자 입력: ");
+        System.out.print();
         int a = stdin.nextInt();
-        System.out.print("두 번째 숫자 입력: ");
+        System.out.print();
         int b = stdin.nextInt();
 
         Calculator calc = new KDG_Calculator(a, b);
