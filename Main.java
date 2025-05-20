@@ -43,6 +43,6 @@ public class Main {
         calc.multiply();
         calc.subtract();
 
-        stdin.close();  // 스캐너 리소스 정리
+        stdin.close();
     }
 }
